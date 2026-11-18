@@ -421,3 +421,133 @@ if (heroVideo && videoToggle) {
 
     updateVideoButton();
 }
+
+
+
+/* ==========================================
+   ROOMS — FILTERS AND VIEW
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const filters = document.querySelectorAll(
+        ".rooms-filters button"
+    );
+
+    const projects = document.querySelectorAll(
+        ".rooms-project"
+    );
+
+    const viewButtons = document.querySelectorAll(
+        ".rooms-view-options button"
+    );
+
+    const gallery = document.querySelector(
+        ".rooms-gallery-grid"
+    );
+
+    /* CATEGORY FILTERS */
+
+    filters.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const category = button.dataset.filter;
+
+            filters.forEach(filter => {
+                filter.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            projects.forEach(project => {
+
+                const show =
+                    category === "all" ||
+                    project.dataset.category === category;
+
+                project.hidden = !show;
+
+            });
+
+        });
+
+    });
+
+    /* GRID / LIST VIEW */
+
+    viewButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const view = button.dataset.view;
+
+            viewButtons.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            if (gallery) {
+                gallery.classList.toggle(
+                    "list-view",
+                    view === "list"
+                );
+            }
+
+        });
+
+    });
+
+});
+
+
+
+/* ==========================================
+   ROOMS — DIFFERENT CATEGORY LAYOUTS
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const filters = document.querySelectorAll(
+        ".rooms-filters button"
+    );
+
+    const sections = document.querySelectorAll(
+        ".rooms-category-content"
+    );
+
+    function showCategory(category) {
+
+        filters.forEach(button => {
+
+            const active =
+                button.dataset.filter === category;
+
+            button.classList.toggle("active", active);
+            button.setAttribute("aria-pressed", String(active));
+
+        });
+
+        sections.forEach(section => {
+
+            section.hidden =
+                section.dataset.content !== category;
+
+        });
+
+    }
+
+    filters.forEach(button => {
+
+        button.addEventListener("click", () => {
+            showCategory(button.dataset.filter);
+        });
+
+    });
+
+    // Initial category
+    showCategory("editorial");
+
+});
+

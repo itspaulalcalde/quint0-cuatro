@@ -26,16 +26,11 @@
 
     <header class="site-header">
 
-        <a class="wordmark" href="index.html">
-            PAULA ALCALDE<sup>®</sup>
-        </a>
-
         <button class="menu-button"
                 type="button"
                 aria-label="Toggle navigation"
                 aria-expanded="false"
                 aria-controls="navigation">
-            MENU
         </button>
 
         <nav class="site-nav"
@@ -52,37 +47,36 @@
     </header>
 
 
+
     <main>
 
-        <!-- ROOMS INTRODUCTION -->
+        <!-- ROOMS / INTRO -->
 
-        <section class="rooms-intro wrap">
+        <section class="rooms-header wrap">
 
-            <div class="intro-meta eyebrow">
-
-                <span>01 / THE ARCHIVE</span>
-                <span>PROJECTS / 2024—2026</span>
-
+            <div class="rooms-top">
+                <span>01 / SELECTED WORK</span>
+                <span>AN ARCHIVE OF CREATIVE EXPLORATIONS — 2026</span>
             </div>
 
+            <h1>Rooms.</h1>
 
-            <div class="rooms-heading">
+            <div class="rooms-controls">
 
-                <h1 class="reveal">
-                    The rooms<span class="muted">.</span>
-                </h1>
+                <!-- CATEGORIES -->
 
-                <div class="rooms-heading-info">
+                <div class="rooms-filter-group">
 
-                    <span class="micro">
-                        A COLLECTION OF CREATIVE WORK
-                    </span>
+                    <span class="rooms-control-label">Category</span>
 
-                    <p>
-                        An archive of projects, ideas and
-                        visual explorations across different
-                        creative disciplines.
-                    </p>
+                    <div class="rooms-filters">
+                        <button class="active" data-filter="all">All</button>
+                        <button data-filter="editorial">Editorial Design</button>
+                        <button data-filter="branding">Branding</button>
+                        <button data-filter="photography">Photography</button>
+                        <button data-filter="poster">Poster Design</button>
+                        <button data-filter="film">Short Film</button>
+                    </div>
 
                 </div>
 
@@ -91,434 +85,134 @@
         </section>
 
 
+        <!-- ROOMS / PROJECT CONTENT -->
 
-        <!-- PROJECT ARCHIVE -->
+        <section class="rooms-content wrap">
 
-        <section class="rooms-archive wrap">
+            <!-- EDITORIAL DESIGN -->
 
-            <div class="section-meta eyebrow">
+            <div class="rooms-category-content"
+                data-content="editorial">
 
-                <span>EXPLORE BY DISCIPLINE</span>
-                <span>INDEX / 001—008</span>
+                <div class="editorial-layout">
+
+                    <!-- LEFT / INTRO -->
+
+                    <div class="editorial-intro">
+
+
+                        <div class="editorial-intro-bottom">
+
+                            <h2>Stories in print.</h2>
+
+                            <p>
+                                Exploring the relationship between
+                                typography, imagery and storytelling
+                                through editorial design.
+                            </p>
+
+                            <span class="editorial-count">
+                                SELECTED PROJECTS / 002
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RIGHT / PROJECTS -->
+
+                    <div class="editorial-projects">
+
+                        <!-- PROJECT 01 -->
+
+                        <article class="editorial-project">
+
+                            <div class="editorial-image">
+                                <img src="gallery/Editorial Design 1.jpeg"
+                                    alt="Lo que permanece"
+                                    loading="lazy">
+                            </div>
+
+                            <div class="editorial-project-info">
+
+                                <h3>Lo que permanece</h3>
+
+                                <p>
+                                    An editorial collection exploring
+                                    memory, loss and the passage of time.
+                                </p>
+
+                                <span>01 / EDITORIAL — 2026</span>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PROJECT 02 -->
+
+                        <article class="editorial-project">
+
+                            <div class="editorial-image">
+                                <img src="gallery/Home 3.jpeg"
+                                    alt="Editorial Studies"
+                                    loading="lazy">
+                            </div>
+
+                            <div class="editorial-project-info">
+
+                                <h3>Editorial Studies</h3>
+
+                                <p>
+                                    A series of experiments with
+                                    typography, composition and imagery.
+                                </p>
+
+                                <span>02 / EDITORIAL — 2026</span>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
 
             </div>
 
 
-            <!-- FILTER CATEGORIES -->
+            <!-- OTHER CATEGORIES -->
 
-            <div class="rooms-filters"
-                 role="group"
-                 aria-label="Filter projects by discipline">
-
-                <button class="filter-btn active"
-                        type="button"
-                        data-filter="all"
-                        aria-pressed="true">
-                    ALL <sup>08</sup>
-                </button>
-
-                <button class="filter-btn"
-                        type="button"
-                        data-filter="editorial"
-                        aria-pressed="false">
-                    EDITORIAL DESIGN
-                </button>
-
-                <button class="filter-btn"
-                        type="button"
-                        data-filter="branding"
-                        aria-pressed="false">
-                    BRANDING
-                </button>
-
-                <button class="filter-btn"
-                        type="button"
-                        data-filter="photography"
-                        aria-pressed="false">
-                    PHOTOGRAPHY
-                </button>
-
-                <button class="filter-btn"
-                        type="button"
-                        data-filter="poster"
-                        aria-pressed="false">
-                    POSTER DESIGN
-                </button>
-
-                <button class="filter-btn"
-                        type="button"
-                        data-filter="film"
-                        aria-pressed="false">
-                    SHORT FILM
-                </button>
-
+            <div class="rooms-category-content"
+                data-content="branding"
+                hidden>
+                <!-- Aquí irá el diseño de Branding -->
             </div>
 
-
-
-            <!-- PROJECT GALLERY -->
-
-            <div class="rooms-gallery">
-
-
-                <!-- PROJECT 01 — EDITORIAL -->
-
-                <article class="room-card reveal"
-                         data-category="editorial">
-
-                    <a href="images/project-01.jpg"
-                       class="room-card-link"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View Lo que permanece">
-
-                        <div class="room-card-image">
-
-                            <img src="images/project-01.jpg"
-                                 alt="Lo que permanece editorial collection"
-                                 loading="lazy">
-
-                            <span class="room-card-arrow">↗</span>
-
-                        </div>
-
-                        <div class="room-card-caption">
-
-                            <div>
-                                <h2>LO QUE PERMANECE</h2>
-                                <span>EDITORIAL DESIGN</span>
-                            </div>
-
-                            <span>01 / 2026</span>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-
-
-                <!-- PROJECT 02 — BRANDING -->
-
-                <article class="room-card reveal"
-                         data-category="branding">
-
-                    <a href="images/project-02.jpg"
-                       class="room-card-link"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View Bare Studio">
-
-                        <div class="room-card-image">
-
-                            <img src="images/project-02.jpg"
-                                 alt="Bare Studio brand identity"
-                                 loading="lazy">
-
-                            <span class="room-card-arrow">↗</span>
-
-                        </div>
-
-                        <div class="room-card-caption">
-
-                            <div>
-                                <h2>BARE STUDIO</h2>
-                                <span>BRANDING / WEB DESIGN</span>
-                            </div>
-
-                            <span>02 / 2026</span>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-
-
-                <!-- PROJECT 03 — PHOTOGRAPHY -->
-
-                <article class="room-card reveal"
-                         data-category="photography">
-
-                    <a href="images/project-03.jpg"
-                       class="room-card-link"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View Visual Diary">
-
-                        <div class="room-card-image">
-
-                            <img src="images/project-03.jpg"
-                                 alt="Visual Diary photography series"
-                                 loading="lazy">
-
-                            <span class="room-card-arrow">↗</span>
-
-                        </div>
-
-                        <div class="room-card-caption">
-
-                            <div>
-                                <h2>VISUAL DIARY</h2>
-                                <span>PHOTOGRAPHY</span>
-                            </div>
-
-                            <span>03 / 2025</span>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-
-
-                <!-- PROJECT 04 — POSTER DESIGN -->
-
-                <article class="room-card reveal"
-                         data-category="poster">
-
-                    <a href="images/project-04.jpg"
-                       class="room-card-link"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View Visual Studies">
-
-                        <div class="room-card-image">
-
-                            <img src="images/project-04.jpg"
-                                 alt="Experimental poster design"
-                                 loading="lazy">
-
-                            <span class="room-card-arrow">↗</span>
-
-                        </div>
-
-                        <div class="room-card-caption">
-
-                            <div>
-                                <h2>VISUAL STUDIES</h2>
-                                <span>POSTER DESIGN</span>
-                            </div>
-
-                            <span>04 / 2026</span>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-
-
-                <!-- PROJECT 05 — EDITORIAL -->
-
-                <article class="room-card reveal"
-                         data-category="editorial">
-
-                    <a href="gallery/Home 3.jpeg"
-                       class="room-card-link"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View Editorial Studies">
-
-                        <div class="room-card-image">
-
-                            <img src="images/project-05.jpg"
-                                 alt="Editorial Studies project"
-                                 loading="lazy">
-
-                            <span class="room-card-arrow">↗</span>
-
-                        </div>
-
-                        <div class="room-card-caption">
-
-                            <div>
-                                <h2>EDITORIAL STUDIES</h2>
-                                <span>EDITORIAL DESIGN</span>
-                            </div>
-
-                            <span>05 / 2025</span>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-
-
-                <!-- PROJECT 06 — SHORT FILM -->
-
-                <article class="room-card reveal"
-                         data-category="film">
-
-                    <a href="images/project-06.jpg"
-                       class="room-card-link"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View Moving Images">
-
-                        <div class="room-card-image">
-
-                            <img src="images/project-06.jpg"
-                                 alt="Moving Images short film"
-                                 loading="lazy">
-
-                            <span class="room-card-arrow">↗</span>
-
-                        </div>
-
-                        <div class="room-card-caption">
-
-                            <div>
-                                <h2>MOVING IMAGES</h2>
-                                <span>SHORT FILM</span>
-                            </div>
-
-                            <span>06 / 2026</span>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-
-
-                <!-- PROJECT 07 — BRANDING -->
-
-                <article class="room-card reveal"
-                         data-category="branding">
-
-                    <a href="images/project-07.jpg"
-                       class="room-card-link"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View Identity Studies">
-
-                        <div class="room-card-image">
-
-                            <img src="images/project-07.jpg"
-                                 alt="Identity Studies branding project"
-                                 loading="lazy">
-
-                            <span class="room-card-arrow">↗</span>
-
-                        </div>
-
-                        <div class="room-card-caption">
-
-                            <div>
-                                <h2>IDENTITY STUDIES</h2>
-                                <span>BRANDING</span>
-                            </div>
-
-                            <span>07 / 2025</span>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-
-
-                <!-- PROJECT 08 — PHOTOGRAPHY -->
-
-                <article class="room-card reveal"
-                         data-category="photography">
-
-                    <a href="images/project-08.jpg"
-                       class="room-card-link"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View Fragments">
-
-                        <div class="room-card-image">
-
-                            <img src="images/project-08.jpg"
-                                 alt="Fragments photography series"
-                                 loading="lazy">
-
-                            <span class="room-card-arrow">↗</span>
-
-                        </div>
-
-                        <div class="room-card-caption">
-
-                            <div>
-                                <h2>FRAGMENTS</h2>
-                                <span>PHOTOGRAPHY</span>
-                            </div>
-
-                            <span>08 / 2026</span>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
+            <div class="rooms-category-content"
+                data-content="photography"
+                hidden>
+                <!-- Aquí irá el diseño de Photography -->
             </div>
 
+            <div class="rooms-category-content"
+                data-content="poster"
+                hidden>
+                <!-- Aquí irá el diseño de Poster Design -->
+            </div>
 
-            <!-- EMPTY STATE -->
-
-            <p class="no-results" hidden>
-                NO PROJECTS FOUND IN THIS CATEGORY.
-            </p>
-
-
-            <!-- ARCHIVE END -->
-
-            <div class="archive-end">
-
-                <span class="eyebrow">
-                    END OF ARCHIVE
-                </span>
-
-                <span class="micro">
-                    MORE PROJECTS COMING SOON.
-                </span>
-
+            <div class="rooms-category-content"
+                data-content="film"
+                hidden>
+                <!-- Aquí irá el diseño de Short Film -->
             </div>
 
         </section>
 
 
-
-        <!-- ABOUT PREVIEW -->
-
-        <section class="rooms-next wrap">
-
-            <div class="section-meta eyebrow">
-
-                <span>02 / NEXT ROOM</span>
-                <span>GET TO KNOW ME</span>
-
-            </div>
-
-            <div class="rooms-next-content">
-
-                <p>
-                    Curious about the person
-                    behind the work?
-                </p>
-
-                <a href="about.html">
-                    About me <span>↗</span>
-                </a>
-
-            </div>
-
-        </section>
 
     </main>
-
 
 
     <!-- FOOTER -->
@@ -527,12 +221,10 @@
 
         <div class="footer-top">
 
-            <span>PAULA ALCALDE®</span>
-            <span>MADRID, SPAIN</span>
-
-            <a href="about.html">
-                ABOUT ↗
-            </a>
+            <h1>
+                <br>
+                paula<sup>®</sup>
+            </h1>
 
         </div>
 
@@ -542,12 +234,8 @@
                 © 2026 ALL RIGHTS RESERVED.
             </span>
 
-            <span>
-                DESIGNED WITH INTENTION.
-            </span>
-
             <a href="#">
-                BACK TO TOP ↑
+                DESIGNED WITH INTENTION.
             </a>
 
         </div>
