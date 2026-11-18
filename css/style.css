@@ -1,1068 +1,1829 @@
-/*GENERAL*/
 
-*{
+/* ==========================================
+   PAULA ALCALDE®
+   EDITORIAL & EXPERIMENTAL PORTFOLIO
+========================================== */
+
+
+/* ==========================================
+   01. VARIABLES & RESET
+========================================== */
+
+:root {
+    --white: #ffffff;
+    --black: #111111;
+    --gray: #777777;
+    --light-gray: #dedede;
+    --off-white: #f7f7f7;
+
+    --font-main: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    --page-padding: 38px;
+    --header-height: 85px;
+
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #ffffff;
-    color: #111111;
-    font-family: Arial, Helvetica, sans-serif;font-family: Arial, Helvetica, sans-serif;
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--font-main);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
-/*HOME*/
-/* 1) Header */
-
-.header {
-    position: fixed;
-    z-index: 9999;
-    top: 40px;
-    left: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+body.menu-open {
+    overflow: hidden;
 }
 
-.logo a {
+a {
+    color: inherit;
     text-decoration: none;
-    color: #111111;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: -0.7;
 }
 
-.navigation {
-    margin-top: 16px;
+button {
+    font: inherit;
 }
 
-.navigation ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-}
-
-.navigation a {
-    text-decoration: none;
-    color: #777777;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.3px;
-    transition: color 0.3 ease;
-}
-
-.navigation a:hover {
-    color: #111111;
-}
-
-
-
-/* 2) Hero */
-.hero {
-    width: 100%;
-    height: 100vh;
-    min-height: 650px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 80px;
-    box-sizing: border-box;
-}
-
-.hero-title h1 {
-    font-size: 100px;
-    font-weight: 500;
-    letter-spacing: -5px;
-    color: #111111;
-    transform: translateX(60px);
-}
-
-.hero-bottom {
-    position: absolute;
-    bottom: 40px;
-    width: auto;
-    left: 80px;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-}
-
-.hero-button {
-    grid-column: 2;
-    justify-self: center;
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.hero-info {
-    grid-column: 1;
-    justify-self: start;
-    margin-left: 150px;
-    text-align: left;
-}
-
-.hero-info p {
-    font-size: 11px;
-    line-height: 1.6;
-    letter-spacing: 0.5px;
-    color: #333333;
-}
-
-
-.hero-bottom a {
-    display: inline-block;
-    width: auto;
-    background-color: #111111;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    padding: 14px 28px;
-    white-space: nowrap;
-    transition: background-color 0.3 ease;
-}
-
-.hero-bottom a:hover {
-    background-color: #777777;
-}
-
-.hero-location {
-    grid-column: 3;
-    justify-self: end;
-    margin-right: 50px;
-    text-align: right;
-}
-
-.hero-location p {
-    font-size: 11px;
-    line-height: 1.6;
-    letter-spacing: 0.5px;
-    color: #333333;
-}
-
-
-/* 3) Selected Work */
-
-.home-work {
-    padding: 5px 30px 220px;
-
-    background-color: white;
-
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-
-.work-intro {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
-
-    margin-bottom: 180px;
-
-    font-size: 11px;
-    line-height: 1.4;
-    letter-spacing: 0.3px;
-}
-
-.work-intro-text {
-    max-width: 320px;
-}
-
-.work-intro p:last-child {
-    text-align: right;
-}
-
-.home-project {
+img {
     display: block;
-
-    color: black;
-    text-decoration: none;
-}
-
-.home-project img {
-    display: block;
-
     width: 100%;
-    height: auto;
-
-    transition: opacity 0.4s ease;
 }
 
-.home-project:hover img {
-    opacity: 0.75;
+[hidden] {
+    display: none !important;
 }
 
-
-.home-project-info {
-    display: grid;
-    grid-template-columns: 40px 1fr auto;
-
-    margin-top: 8px;
-
-    font-size: 11px;
-    letter-spacing: 0.2px;
-}
-
-.home-project-info span:last-child {
-    color: #999;
+::selection {
+    background: var(--black);
+    color: var(--white);
 }
 
 
-.project-large {
-    width: 30%;
+/* ==========================================
+   02. GENERAL ELEMENTS
+========================================== */
 
-    margin-left: 5%;
-    margin-bottom: 220px;
-}
-
-
-.project-small-right {
-    width: 24%;
-
-    margin-left: auto;
-    margin-right: 12%;
-    margin-bottom: 230px;
-}
-
-.project-medium-left {
-    width: 32%;
-
-    margin-left: 22%;
-}
-
-
-.all-work {
+.wrap {
     width: 100%;
-    padding: 120px 30px 80px;
-
-    background-color: white;
-
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-left: var(--page-padding);
+    padding-right: var(--page-padding);
 }
 
-
-.all-work p {
-    margin: 0 0 30px;
-
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.3px;
-
-    text-transform: uppercase;
-}
-
-.all-work a {
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    padding-bottom: 18px;
-
-    border-bottom: 1px solid black;
-
-    color: black;
-    text-decoration: none;
-
-    font-size: clamp(70px, 12vw, 20px);
-    font-weight: 500;
-
-    line-height: 0.85;
-    letter-spacing: -8px;
-}
-
-.all-work a span {
-    font-size: 40px;
-    font-weight: 400;
-
-    line-height: 1;
-    letter-spacing: 0;
-
-    margin-bottom: 10px;
-
-    transition: transform 0.3s ease;
-}
-
-
-.all-work a:hover span {
-    transform: translate(8px, -8px);
-}
-
-/*ROOMS*/
-
-/* =========================
-   ROOMS
-========================= */
-
-.rooms-section {
-    background-color: #ffffff;
-    color: #111111;
-    padding: 100px 40px 80px;
-}
-
-
-/* HEADER */
-
-.rooms-header {
-    margin-bottom: 90px;
-}
-
-.rooms-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 70px;
-}
-
-.rooms-top span {
+.eyebrow,
+.micro,
+.caption {
     font-size: 10px;
-    letter-spacing: 0.5px;
-}
-
-.rooms-header h1 {
-    font-size: clamp(55px, 8vw, 120px);
     font-weight: 400;
-    letter-spacing: -5px;
-    line-height: 1;
-    margin: 0 0 30px;
+    letter-spacing: 0.025em;
+    line-height: 1.5;
 }
 
-.rooms-header p {
-    font-size: 13px;
-    line-height: 1.8;
-    color: #777777;
+.micro {
+    font-size: 9px;
 }
 
+.muted {
+    color: #bcbcbc;
+}
 
-/* HORIZONTAL TABS */
-
-.rooms-tabs {
+.intro-meta,
+.section-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 25px;
-    border-bottom: 1px solid #dddddd;
-    margin-bottom: 45px;
+    gap: 20px;
 }
 
-.room-tab {
-    position: relative;
-    background: none;
-    border: none;
-    padding: 0 0 20px;
-    color: #999999;
+.section-meta {
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.section-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    width: 100%;
+    padding: 20px 0;
+
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+
     font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
+    transition: padding 0.4s var(--ease);
+}
+
+.section-link span:last-child {
+    font-size: 20px;
+    transition: transform 0.4s var(--ease);
+}
+
+.section-link:hover {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.section-link:hover span:last-child {
+    transform: translate(5px, -5px);
+}
+
+
+/* ==========================================
+   03. HEADER
+========================================== */
+
+.site-header {
+    position: relative;
+    z-index: 1000;
+
+    min-height: var(--header-height);
+    padding: 28px var(--page-padding);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+
+    background: var(--white);
+}
+
+.wordmark {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.055em;
     white-space: nowrap;
-    cursor: pointer;
-    transition: color 0.3s ease;
 }
 
-.room-tab:hover {
-    color: #111111;
+.wordmark sup {
+    font-size: 8px;
+    margin-left: 2px;
 }
 
-.room-tab.active {
-    color: #111111;
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 75px;
 }
 
-.room-tab.active::after {
+.site-nav a {
+    position: relative;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    padding-bottom: 5px;
+}
+
+.site-nav a::after {
     content: "";
     position: absolute;
-    bottom: -1px;
     left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #111111;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+    background: var(--black);
+
+    transition: width 0.4s var(--ease);
 }
 
+.site-nav a:hover::after,
+.site-nav a[aria-current="page"]::after {
+    width: 100%;
+}
 
-/* PANELS */
-
-.room-panel {
+.menu-button {
     display: none;
-}
-
-.room-panel.active {
-    display: block;
-    animation: fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    background: none;
+    border: none;
+    font-size: 11px;
+    cursor: pointer;
 }
 
 
-/* GALLERY */
+/* ==========================================
+   04. HOME — INTRO
+========================================== */
 
-.room-gallery {
+.intro {
+    padding-top: 110px;
+    padding-bottom: 95px;
+}
+
+.intro-meta {
+    margin-bottom: 80px;
+}
+
+.intro h1 {
+    font-size: clamp(95px, 15vw, 250px);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.105em;
+}
+
+.intro-note {
+    max-width: 300px;
+    margin-top: 60px;
+    margin-left: auto;
+
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+
+/* ==========================================
+   05. HOME — PROJECT GALLERY
+========================================== */
+
+.gallery-section {
+    padding-top: 35px;
+    padding-bottom: 150px;
+}
+
+.gallery-section .section-meta {
+    margin-bottom: 55px;
+}
+
+.gallery {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 18px;
+    row-gap: 100px;
+    align-items: start;
 }
 
-.room-gallery img {
+.project {
     display: block;
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
+    min-width: 0;
 }
 
+.project:nth-child(1) {
+    grid-column: 1 / 7;
+}
 
-/* BOTTOM */
+.project:nth-child(2) {
+    grid-column: 8 / 12;
+    margin-top: 120px;
+}
 
-.rooms-bottom {
+.project:nth-child(3) {
+    grid-column: 2 / 5;
+    margin-top: -10px;
+}
+
+.project:nth-child(4) {
+    grid-column: 7 / 13;
+    margin-top: 130px;
+}
+
+.project:nth-child(5) {
+    grid-column: 3 / 10;
+    margin-top: 80px;
+}
+
+.project-media {
+    position: relative;
+    overflow: hidden;
+    background: var(--off-white);
+}
+
+.project-media img {
+    width: 100%;
+    height: auto;
+    transition: transform 1.1s var(--ease);
+}
+
+.project:hover .project-media img {
+    transform: scale(1.035);
+}
+
+.project-caption {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    border-top: 1px solid #dddddd;
-    margin-top: 100px;
-    padding-top: 25px;
+    margin-top: 12px;
 }
 
-.rooms-bottom span {
-    font-size: 10px;
-    letter-spacing: 0.5px;
-}
-
-
-/* RESPONSIVE */
-
-@media (max-width: 800px) {
-
-    .rooms-section {
-        padding: 70px 20px 50px;
-    }
-
-    .rooms-header {
-        margin-bottom: 65px;
-    }
-
-    .rooms-header h1 {
-        font-size: 55px;
-        letter-spacing: -2px;
-    }
-
-    .rooms-tabs {
-        justify-content: flex-start;
-        gap: 30px;
-        overflow-x: auto;
-        scrollbar-width: none;
-    }
-
-    .rooms-tabs::-webkit-scrollbar {
-        display: none;
-    }
-
-    .room-gallery {
-        gap: 15px;
-    }
-
-    .room-gallery img {
-        height: 350px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .rooms-header h1 {
-        font-size: 45px;
-    }
-
-    .room-gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .room-gallery img {
-        height: auto;
-    }
-
-    .rooms-bottom {
-        margin-top: 60px;
-    }
-}
-
-
-/*ABOUT*/
-/* 1) About me */
-
-.portfolio-about {
-    background: #ffffff;
-    color: #111111;
-    padding: 100px 40px 40px;
-}
-
-/* INTRO */
-
-.portfolio-about-intro {
-    margin-bottom: 150px;
-}
-
-.portfolio-label,
-.portfolio-small-label {
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-}
-
-.portfolio-about-title {
-    font-size: clamp(65px, 11vw, 170px);
-    font-weight: 400;
-    letter-spacing: -6px;
-    line-height: 0.95;
-    margin: 70px 0 40px;
-}
-
-.portfolio-intro-caption {
-    font-size: 10px;
-    letter-spacing: 0.5px;
+.project-caption span:last-child {
+    color: var(--gray);
     text-align: right;
 }
 
+.gallery-section > .section-link {
+    max-width: 390px;
+    margin: 130px 0 0 auto;
+}
 
-/* PRESENTACIÓN */
 
-.portfolio-about-content {
+/* ==========================================
+   06. HOME — STATEMENT
+========================================== */
+
+.statement {
+    padding-top: 120px;
+    padding-bottom: 160px;
+    background: var(--off-white);
+}
+
+.statement-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    align-items: center;
-    margin-bottom: 180px;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
 }
 
-.portfolio-about-image img {
-    display: block;
-    width: 100%;
-    height: 650px;
-    object-fit: cover;
-    filter: grayscale(100%);
-}
+.statement h2 {
+    max-width: 950px;
 
-.portfolio-about-info {
-    max-width: 420px;
-}
-
-.portfolio-about-info h2 {
-    font-size: clamp(36px, 4vw, 60px);
+    font-size: clamp(35px, 4.6vw, 76px);
     font-weight: 400;
-    letter-spacing: -2px;
-    margin: 45px 0 35px;
+    letter-spacing: -0.055em;
+    line-height: 1.12;
 }
 
-.portfolio-about-info p {
-    font-size: 14px;
-    line-height: 1.9;
-    color: #777777;
-    margin-bottom: 25px;
+.statement p {
+    max-width: 390px;
+    margin-top: 80px;
+    margin-left: auto;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.statement .section-link {
+    max-width: 390px;
+    margin: 60px 0 0 auto;
 }
 
 
-/* DISCIPLINAS */
+/* ==========================================
+   07. HOME — CONTACT
+========================================== */
 
-.portfolio-disciplines {
-    margin-bottom: 180px;
+.contact-band {
+    padding-top: 130px;
+    padding-bottom: 150px;
 }
 
-.portfolio-disciplines-heading {
-    margin-bottom: 70px;
-}
+.contact-band h2 {
+    margin: 65px 0 45px;
 
-.portfolio-disciplines-heading h2 {
-    font-size: clamp(35px, 5vw, 65px);
+    font-size: clamp(75px, 12vw, 190px);
     font-weight: 400;
-    letter-spacing: -2px;
-    margin-top: 35px;
+    letter-spacing: -0.09em;
+    line-height: 0.95;
 }
 
-.portfolio-discipline {
-    display: grid;
-    grid-template-columns: 60px 1fr 30px;
-    align-items: center;
-    gap: 20px;
-    padding: 30px 0;
-    border-top: 1px solid #dddddd;
+.contact-band h2 a {
+    display: inline-block;
+    transition: transform 0.5s var(--ease);
 }
 
-.portfolio-discipline:last-child {
-    border-bottom: 1px solid #dddddd;
-}
-
-.portfolio-discipline span {
-    font-size: 11px;
-    color: #777777;
-}
-
-.portfolio-discipline h3 {
-    font-size: clamp(25px, 4vw, 50px);
-    font-weight: 400;
-    letter-spacing: -1.5px;
-    margin: 0;
-    transition: transform 0.3s ease;
-}
-
-.portfolio-discipline:hover h3 {
+.contact-band h2 a:hover {
     transform: translateX(15px);
 }
 
 
-/* CONTACTO */
+/* ==========================================
+   08. ROOMS — INTRO
+========================================== */
 
-.portfolio-about-contact {
-    padding: 80px 0 100px;
+.rooms-intro {
+    padding-top: 110px;
+    padding-bottom: 120px;
 }
 
-.portfolio-about-contact h2 {
-    font-size: clamp(55px, 9vw, 130px);
+.rooms-intro .intro-meta {
+    margin-bottom: 90px;
+}
+
+.rooms-heading h1 {
+    font-size: clamp(85px, 13vw, 220px);
     font-weight: 400;
-    letter-spacing: -5px;
-    line-height: 1;
-    margin: 50px 0;
+    letter-spacing: -0.1em;
+    line-height: 0.9;
 }
 
-.portfolio-about-contact a {
-    display: inline-block;
-    color: #111111;
-    text-decoration: none;
-    font-size: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #111111;
-    transition: opacity 0.3s ease;
-}
-
-.portfolio-about-contact a:hover {
-    opacity: 0.5;
-}
-
-
-/* RESPONSIVE */
-
-@media (max-width: 800px) {
-
-    .portfolio-about {
-        padding: 70px 20px 30px;
-    }
-
-    .portfolio-about-intro {
-        margin-bottom: 90px;
-    }
-
-    .portfolio-about-title {
-        font-size: clamp(55px, 12vw, 90px);
-        letter-spacing: -3px;
-        margin-top: 50px;
-    }
-
-    .portfolio-about-content {
-        grid-template-columns: 1fr;
-        gap: 50px;
-        margin-bottom: 110px;
-    }
-
-    .portfolio-about-image img {
-        height: 450px;
-    }
-
-    .portfolio-disciplines {
-        margin-bottom: 100px;
-    }
-
-    .portfolio-discipline {
-        grid-template-columns: 35px 1fr 20px;
-        gap: 10px;
-        padding: 25px 0;
-    }
-
-    .portfolio-about-contact {
-        padding: 40px 0 70px;
-    }
-
-    .portfolio-about-contact h2 {
-        letter-spacing: -2px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .portfolio-about-title {
-        font-size: 52px;
-    }
-
-    .portfolio-about-image img {
-        height: 350px;
-    }
-
-    .portfolio-about-info h2 {
-        font-size: 36px;
-    }
-
-    .portfolio-about-contact h2 {
-        font-size: 50px;
-    }
-}
-
-
-
-/* 2) Skills */
-
-.skills {
-    width: 100%;
-
-    padding: 120px 70px 180px;
-
-    background-color: white;
-
-    font-family: inherit;
-}
-
-.skills-header {
+.rooms-heading-info {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-
-    margin-bottom: 100px;
+    gap: 40px;
+    margin-top: 65px;
 }
 
-.skills-header h2 {
-    margin: 0;
-
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-    font-size: clamp(50px, 12vw, 190px);
-    font-weight: 500;
-
-    line-height: 0.8;
-    letter-spacing: -8px;
+.rooms-heading-info p {
+    max-width: 330px;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
-.skills-header p {
-    margin: 0;
 
+/* ==========================================
+   09. ROOMS — FILTERS
+========================================== */
+
+.rooms-archive {
+    padding-bottom: 160px;
+}
+
+.rooms-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px 45px;
+
+    padding: 35px 0 85px;
+}
+
+.filter-btn {
+    position: relative;
+
+    background: none;
+    border: none;
+    padding: 8px 0;
+
+    color: #999999;
     font-size: 11px;
     font-weight: 400;
+    letter-spacing: 0.015em;
 
-    line-height: 1.4;
-    letter-spacing: 0.3px;
-
-    text-align: right;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.skills-list {
+.filter-btn:hover,
+.filter-btn.active {
+    color: var(--black);
+}
+
+.filter-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+    background: var(--black);
+
+    transition: width 0.4s var(--ease);
+}
+
+.filter-btn.active::after,
+.filter-btn:hover::after {
     width: 100%;
-
-    border-top: 1px solid black;
 }
 
-.skill-row {
+.filter-btn sup {
+    font-size: 8px;
+    margin-left: 3px;
+}
+
+
+/* ==========================================
+   10. ROOMS — EXPERIMENTAL GALLERY
+========================================== */
+
+.rooms-gallery {
     display: grid;
-
-    grid-template-columns: 80px 1.5fr 1fr;
-
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 18px;
+    row-gap: 110px;
     align-items: start;
-
-    padding: 22px 0 45px;
-
-    border-bottom: 1px solid black;
 }
 
-.skill-number {
+.room-card {
+    min-width: 0;
+}
+
+.room-card:nth-child(8n + 1) {
+    grid-column: span 6;
+}
+
+.room-card:nth-child(8n + 2) {
+    grid-column: span 4;
+    margin-top: 125px;
+}
+
+.room-card:nth-child(8n + 3) {
+    grid-column: span 3;
+    margin-top: 40px;
+}
+
+.room-card:nth-child(8n + 4) {
+    grid-column: span 6;
+    margin-top: 160px;
+}
+
+.room-card:nth-child(8n + 5) {
+    grid-column: span 5;
+}
+
+.room-card:nth-child(8n + 6) {
+    grid-column: span 6;
+    margin-top: 90px;
+}
+
+.room-card:nth-child(8n + 7) {
+    grid-column: span 4;
+}
+
+.room-card:nth-child(8n + 8) {
+    grid-column: span 5;
+    margin-top: 130px;
+}
+
+.room-card-link {
+    display: block;
+}
+
+.room-card-image {
+    position: relative;
+    overflow: hidden;
+    background: var(--off-white);
+}
+
+.room-card-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 1.1s var(--ease);
+}
+
+.room-card-link:hover img {
+    transform: scale(1.04);
+}
+
+.room-card-arrow {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--white);
+    font-size: 18px;
+
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.4s var(--ease);
+}
+
+.room-card-link:hover .room-card-arrow {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.room-card-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 14px;
+}
+
+.room-card-caption h2 {
+    font-size: 11px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.room-card-caption span {
+    font-size: 10px;
+    color: var(--gray);
+}
+
+.room-card-caption > span {
+    white-space: nowrap;
+}
+
+.room-card.is-hidden {
+    display: none;
+}
+
+.no-results {
+    text-align: center;
+    padding: 100px 20px;
+    font-size: 12px;
+}
+
+
+/* FILTERED LAYOUT */
+
+.rooms-gallery.is-filtered {
+    row-gap: 90px;
+}
+
+.rooms-gallery.is-filtered .room-card:not(.is-hidden) {
+    grid-column: span 6;
+    margin-top: 0;
+}
+
+.rooms-gallery.is-filtered .room-card:not(.is-hidden):nth-child(even) {
+    margin-top: 100px;
+}
+
+
+/* ==========================================
+   11. ROOMS — ARCHIVE END
+========================================== */
+
+.archive-end {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-top: 1px solid var(--light-gray);
+    margin-top: 140px;
+    padding-top: 20px;
+}
+
+
+/* ==========================================
+   12. ROOMS — NEXT SECTION
+========================================== */
+
+.rooms-next {
+    padding-top: 110px;
+    padding-bottom: 150px;
+    background: var(--off-white);
+}
+
+.rooms-next-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 50px;
+    margin-top: 90px;
+}
+
+.rooms-next-content p {
+    max-width: 260px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.rooms-next-content a {
+    font-size: clamp(60px, 9vw, 145px);
+    letter-spacing: -0.085em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.rooms-next-content a span {
+    display: inline-block;
+    font-size: 0.5em;
+    vertical-align: top;
+    transition: transform 0.4s var(--ease);
+}
+
+.rooms-next-content a:hover span {
+    transform: translate(10px, -10px);
+}
+
+
+/* ==========================================
+   13. ABOUT — INTRODUCTION
+========================================== */
+
+.about-intro {
+    padding-top: 110px;
+    padding-bottom: 160px;
+}
+
+.about-intro .intro-meta {
+    margin-bottom: 90px;
+}
+
+.about-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 130px;
+}
+
+.about-heading h1 {
+    font-size: clamp(80px, 12vw, 190px);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.095em;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 12%;
+    align-items: start;
+}
+
+.about-image {
+    max-width: 650px;
+}
+
+.about-image img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.image-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 13px;
+    font-size: 10px;
+}
+
+.about-text {
+    max-width: 470px;
+    padding-top: 90px;
+}
+
+.about-text h2 {
+    font-size: clamp(45px, 5vw, 80px);
+    font-weight: 400;
+    letter-spacing: -0.07em;
+    margin: 35px 0 50px;
+}
+
+.about-text p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.about-text .about-lead {
+    font-size: 21px;
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+    margin-bottom: 45px;
+}
+
+
+/* ==========================================
+   14. ABOUT — QUOTE
+========================================== */
+
+.about-quote {
+    padding-top: 110px;
+    padding-bottom: 160px;
+    background: var(--off-white);
+}
+
+.quote-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 40px;
+    margin-top: 110px;
+}
+
+.quote-symbol {
+    font-size: 45px;
+}
+
+.quote-layout h2 {
+    font-size: clamp(45px, 6.5vw, 110px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.07em;
+}
+
+.quote-layout h2 em {
+    font-weight: 400;
+    color: var(--gray);
+}
+
+
+/* ==========================================
+   15. ABOUT — DISCIPLINES
+========================================== */
+
+.about-disciplines {
+    padding-top: 150px;
+    padding-bottom: 170px;
+}
+
+.disciplines-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 12%;
+    margin-top: 100px;
+}
+
+.disciplines-heading h2 {
+    font-size: clamp(50px, 6vw, 100px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.075em;
+}
+
+.disciplines-heading p {
+    max-width: 250px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 50px;
+}
+
+.discipline-item {
+    display: grid;
+    grid-template-columns: 35px 1fr 20px;
+    align-items: center;
+    gap: 15px;
+
+    border-top: 1px solid var(--light-gray);
+    padding: 30px 0;
+
+    transition: padding 0.4s var(--ease);
+}
+
+.discipline-item:last-child {
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.discipline-item > span {
     font-size: 11px;
 }
 
-.skill-row h3 {
-    margin: 0;
-
-    font-size: 30px;
+.discipline-item h3 {
+    font-size: clamp(19px, 2.3vw, 35px);
     font-weight: 400;
-
-    letter-spacing: -1px;
+    letter-spacing: -0.04em;
 }
 
-.skill-row p {
-    margin: 0;
+.discipline-item:hover {
+    padding-left: 12px;
+    padding-right: 12px;
+}
 
+
+/* ==========================================
+   16. ABOUT — PERSONAL
+========================================== */
+
+.about-personal {
+    padding-top: 120px;
+    padding-bottom: 150px;
+    background: var(--off-white);
+}
+
+.personal-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12%;
+    margin-top: 100px;
+}
+
+.personal-title h2 {
+    font-size: clamp(55px, 7vw, 120px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.08em;
+}
+
+.personal-description {
+    padding-top: 60px;
+}
+
+.personal-description p {
+    max-width: 460px;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.personal-interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 25px;
+    margin-top: 60px;
+}
+
+.personal-interests span {
+    font-size: 10px;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 8px;
+}
+
+
+/* ==========================================
+   17. ABOUT — CONTACT
+========================================== */
+
+.about-contact {
+    padding-top: 130px;
+    padding-bottom: 160px;
+}
+
+.about-contact-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr;
+    gap: 80px;
+    margin-top: 100px;
+}
+
+.about-contact-layout > div:first-child > p {
+    max-width: 250px;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.about-contact h2 {
+    margin-top: 50px;
+
+    font-size: clamp(75px, 11vw, 180px);
+    font-weight: 400;
+    letter-spacing: -0.09em;
+    line-height: 1;
+}
+
+.about-contact h2 a {
+    display: inline-block;
+    transition: transform 0.4s var(--ease);
+}
+
+.about-contact h2 a:hover {
+    transform: translateX(10px);
+}
+
+.about-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    padding-top: 50px;
+}
+
+.about-contact-info > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.about-contact-info div > span {
+    font-size: 10px;
+    color: var(--gray);
+    margin-bottom: 8px;
+}
+
+.about-contact-info a,
+.about-contact-info p {
     font-size: 12px;
-    font-weight: 400;
-
     line-height: 1.5;
-    letter-spacing: 0.2px;
+}
+
+.about-contact-info a:hover {
+    text-decoration: underline;
 }
 
 
+/* ==========================================
+   18. FOOTER
+========================================== */
 
-/* FOOTER  */
-
-.portfolio-footer {
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #111111;
-    color: #ffffff;
-    padding: 45px 40px 25px;
+.footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 65px var(--page-padding) 30px;
 }
-
-
-/* TOP */
 
 .footer-top {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.footer-top > span {
-    font-size: 10px;
-    letter-spacing: 0.5px;
-    color: #aaaaaa;
-}
-
-.footer-status {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.footer-status span:last-child {
-    font-size: 10px;
-    letter-spacing: 0.5px;
-    color: #aaaaaa;
-}
-
-.status-dot {
-    width: 7px;
-    height: 7px;
-    background-color: #b4d2b4;
-    border-radius: 50%;
-}
-
-
-
-.footer-contact {
-    padding: 100px 0 110px;
-}
-
-.footer-contact h2 {
-    font-size: clamp(38px, 5vw, 70px);
-    font-weight: 400;
-    letter-spacing: -2px;
-    line-height: 1.1;
-    margin: 0 0 20px;
-}
-
-.footer-contact p {
-    font-size: 14px;
-    color: #aaaaaa;
-    margin-bottom: 40px;
-}
-
-.footer-contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #ffffff;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    transition: opacity 0.3s ease;
-}
-
-.footer-contact-link:hover {
-    opacity: 0.5;
-}
-
-.footer-contact-link svg {
-    width: 16px;
-    height: 16px;
-    stroke-width: 1.5;
-}
-
-
-
-.footer-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    border-top: 1px solid #444444;
-    padding: 45px 0 90px;
-}
-
-.footer-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-}
-
-.footer-label {
-    color: #888888;
-    font-size: 10px;
-    letter-spacing: 0.5px;
-    margin-bottom: 15px;
-}
-
-.footer-column a {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 12px;
-    transition: opacity 0.3s ease;
-}
-
-.footer-column a:hover {
-    opacity: 0.5;
-}
-
-.footer-column a svg {
-    width: 16px;
-    height: 16px;
-    stroke-width: 1.5;
-}
-
-
-
-.footer-identity {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
     gap: 30px;
-    border-top: 1px solid #444444;
-    padding: 35px 0;
+    padding-bottom: 130px;
 }
 
-.footer-logo {
-    font-size: 28px;
-    font-weight: 500;
-    letter-spacing: -1px;
+.footer-top span,
+.footer-top a {
+    font-size: 11px;
 }
-
-.footer-brand p {
-    font-size: 10px;
-    letter-spacing: 0.5px;
-    color: #888888;
-    margin-top: 12px;
-}
-
-.footer-location {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.footer-location span {
-    font-size: 10px;
-    color: #aaaaaa;
-    letter-spacing: 0.5px;
-}
-
-.footer-location svg {
-    width: 15px;
-    height: 15px;
-    stroke-width: 1.5;
-}
-
-
 
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
+
     border-top: 1px solid #444444;
     padding-top: 25px;
 }
 
 .footer-bottom span,
 .footer-bottom a {
-    color: #888888;
     font-size: 10px;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-}
-
-.footer-bottom a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.3s ease;
-}
-
-.footer-bottom a:hover {
-    color: #ffffff;
-}
-
-.footer-bottom a svg {
-    width: 14px;
-    height: 14px;
 }
 
 
-/* RESPONSIVE */
+/* ==========================================
+   19. SCROLL ANIMATIONS
+========================================== */
 
-@media (max-width: 800px) {
+.js-enabled .reveal {
+    opacity: 0;
+    transform: translateY(35px);
 
-    .portfolio-footer {
-        padding: 35px 20px 25px;
+    transition:
+        opacity 0.9s ease,
+        transform 1s var(--ease);
+}
+
+.js-enabled .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   20. RESPONSIVE — TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+
+    :root {
+        --page-padding: 28px;
     }
 
-    .footer-contact {
-        padding: 80px 0;
+    .site-nav {
+        gap: 35px;
     }
 
-    .footer-contact h2 {
-        font-size: 45px;
+    .gallery,
+    .rooms-gallery {
+        column-gap: 12px;
     }
 
-    .footer-columns {
+    .about-layout {
+        gap: 7%;
+    }
+
+    .about-text {
+        padding-top: 30px;
+    }
+
+    .disciplines-layout {
+        gap: 7%;
+    }
+
+    .rooms-next-content a {
+        font-size: 8vw;
+    }
+
+}
+
+
+/* ==========================================
+   21. RESPONSIVE — MOBILE
+========================================== */
+
+@media (max-width: 767px) {
+
+    :root {
+        --page-padding: 20px;
+        --header-height: 70px;
+    }
+
+
+    /* HEADER */
+
+    .site-header {
+        min-height: var(--header-height);
+        padding-top: 25px;
+        padding-bottom: 25px;
+        align-items: center;
+    }
+
+    .wordmark {
+        font-size: 14px;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .site-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
         gap: 30px;
-        padding-bottom: 70px;
+
+        background: var(--white);
+        padding: 45px var(--page-padding) 60px;
+
+        border-bottom: 1px solid var(--light-gray);
     }
 
-}
+    .site-nav.is-open {
+        display: flex;
+    }
 
-@media (max-width: 480px) {
+    .site-nav a {
+        font-size: 25px;
+        letter-spacing: -0.04em;
+    }
+
+
+    /* HOME INTRO */
+
+    .intro {
+        padding-top: 90px;
+        padding-bottom: 80px;
+    }
+
+    .intro-meta {
+        margin-bottom: 65px;
+    }
+
+    .intro h1 {
+        font-size: clamp(75px, 17vw, 135px);
+    }
+
+    .intro-note {
+        margin-top: 55px;
+        font-size: 13px;
+    }
+
+
+    /* HOME GALLERY */
+
+    .gallery-section {
+        padding-bottom: 100px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        row-gap: 65px;
+    }
+
+    .project:nth-child(n) {
+        margin-top: 0;
+    }
+
+    .project:nth-child(1),
+    .project:nth-child(4) {
+        grid-column: 1 / 7;
+    }
+
+    .project:nth-child(2),
+    .project:nth-child(5) {
+        grid-column: 2 / 7;
+    }
+
+    .project:nth-child(3) {
+        grid-column: 1 / 5;
+    }
+
+    .project-caption {
+        font-size: 9px;
+    }
+
+    .gallery-section > .section-link {
+        margin-top: 80px;
+    }
+
+
+    /* HOME STATEMENT */
+
+    .statement {
+        padding-top: 90px;
+        padding-bottom: 100px;
+    }
+
+    .statement-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .statement h2 {
+        font-size: clamp(35px, 8vw, 65px);
+    }
+
+    .statement p {
+        margin-top: 55px;
+        font-size: 14px;
+    }
+
+
+    /* HOME CONTACT */
+
+    .contact-band {
+        padding-top: 100px;
+        padding-bottom: 110px;
+    }
+
+    .contact-band h2 {
+        font-size: clamp(65px, 13vw, 110px);
+    }
+
+
+    /* ROOMS INTRO */
+
+    .rooms-intro {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .rooms-intro .intro-meta {
+        margin-bottom: 70px;
+    }
+
+    .rooms-heading h1 {
+        font-size: clamp(65px, 13vw, 110px);
+    }
+
+    .rooms-heading-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        margin-top: 60px;
+    }
+
+    .rooms-heading-info p {
+        font-size: 14px;
+    }
+
+
+    /* ROOMS FILTERS */
+
+    .rooms-filters {
+        gap: 12px 25px;
+        padding: 30px 0 60px;
+    }
+
+    .filter-btn {
+        font-size: 10px;
+    }
+
+
+    /* ROOMS GALLERY */
+
+    .rooms-gallery {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        row-gap: 65px;
+    }
+
+    .room-card:nth-child(n) {
+        grid-column: span 6;
+        margin-top: 0;
+    }
+
+    .room-card:nth-child(3n) {
+        grid-column: span 5;
+    }
+
+    .room-card:nth-child(4n) {
+        grid-column: 2 / 7;
+    }
+
+    .rooms-gallery.is-filtered .room-card:not(.is-hidden) {
+        grid-column: span 6;
+        margin-top: 0;
+    }
+
+    .rooms-gallery.is-filtered
+    .room-card:not(.is-hidden):nth-child(even) {
+        margin-top: 0;
+    }
+
+    .room-card-caption h2 {
+        font-size: 10px;
+    }
+
+    .archive-end {
+        margin-top: 90px;
+    }
+
+
+    /* ROOMS NEXT */
+
+    .rooms-next {
+        padding-top: 90px;
+        padding-bottom: 110px;
+    }
+
+    .rooms-next-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 50px;
+        margin-top: 70px;
+    }
+
+    .rooms-next-content a {
+        font-size: 12vw;
+    }
+
+
+    /* ABOUT INTRO */
+
+    .about-intro {
+        padding-top: 90px;
+        padding-bottom: 110px;
+    }
+
+    .about-intro .intro-meta {
+        margin-bottom: 70px;
+    }
+
+    .about-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 35px;
+        margin-bottom: 80px;
+    }
+
+    .about-heading h1 {
+        font-size: clamp(65px, 12vw, 110px);
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .about-text {
+        padding-top: 0;
+    }
+
+    .about-text h2 {
+        font-size: 55px;
+    }
+
+    .about-text .about-lead {
+        font-size: 19px;
+    }
+
+
+    /* ABOUT QUOTE */
+
+    .about-quote {
+        padding-top: 90px;
+        padding-bottom: 110px;
+    }
+
+    .quote-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        margin-top: 75px;
+    }
+
+    .quote-layout h2 {
+        font-size: clamp(40px, 9vw, 75px);
+    }
+
+
+    /* ABOUT DISCIPLINES */
+
+    .about-disciplines {
+        padding-top: 100px;
+        padding-bottom: 110px;
+    }
+
+    .disciplines-layout {
+        grid-template-columns: 1fr;
+        gap: 65px;
+        margin-top: 75px;
+    }
+
+    .disciplines-heading h2 {
+        font-size: 65px;
+    }
+
+    .discipline-item h3 {
+        font-size: 23px;
+    }
+
+
+    /* ABOUT PERSONAL */
+
+    .about-personal {
+        padding-top: 90px;
+        padding-bottom: 110px;
+    }
+
+    .personal-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        margin-top: 75px;
+    }
+
+    .personal-title h2 {
+        font-size: 65px;
+    }
+
+    .personal-description {
+        padding-top: 0;
+    }
+
+    .personal-description p {
+        font-size: 15px;
+    }
+
+
+    /* ABOUT CONTACT */
+
+    .about-contact {
+        padding-top: 100px;
+        padding-bottom: 120px;
+    }
+
+    .about-contact-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        margin-top: 75px;
+    }
+
+    .about-contact h2 {
+        font-size: 13vw;
+    }
+
+    .about-contact-info {
+        padding-top: 0;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 60px var(--page-padding) 25px;
+    }
 
     .footer-top {
-        align-items: flex-start;
-    }
-
-    .footer-status span:last-child {
-        font-size: 8px;
-    }
-
-    .footer-contact h2 {
-        font-size: 36px;
-    }
-
-    .footer-columns {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    .footer-identity {
-        align-items: flex-start;
         flex-direction: column;
         gap: 25px;
+        padding-bottom: 100px;
     }
 
-    .footer-bottom span,
-    .footer-bottom a {
-        font-size: 9px;
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+}
+
+
+/* ==========================================
+   22. SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+
+    .intro h1 {
+        font-size: 16vw;
+    }
+
+    .rooms-heading h1 {
+        font-size: 12vw;
+    }
+
+    .about-heading h1 {
+        font-size: 11.5vw;
+    }
+
+    .project-caption,
+    .room-card-caption {
+        gap: 10px;
+    }
+
+}
+
+
+/* ==========================================
+   23. REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .js-enabled .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+}
+
+
+
+/* ==========================================
+   PAGE TRANSITIONS
+========================================== */
+
+body {
+    opacity: 1;
+    transition: opacity 0.35s ease;
+}
+
+body.page-leaving {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   IMAGE HOVER REFINEMENT
+========================================== */
+
+.project-media,
+.room-card-image {
+    overflow: hidden;
+}
+
+.project-media img,
+.room-card-image img {
+    transition: transform 1s
+        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ==========================================
+   FILTER TRANSITIONS
+========================================== */
+
+.room-card {
+    transition:
+        opacity 0.4s ease,
+        transform 0.5s ease;
+}
+
+.room-card.is-hidden {
+    display: none;
+}
+
+
+/* ==========================================
+   MOBILE MENU TRANSITION
+========================================== */
+
+@media (max-width: 767px) {
+
+    .site-nav.is-open {
+        animation: menuAppear 0.4s ease both;
+    }
+
+    @keyframes menuAppear {
+
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
+
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    body {
+        transition: none;
+    }
+
+    .site-nav.is-open {
+        animation: none;
+    }
+
+}
+
+
+
+/* ==========================================
+   HOME — VIDEO HERO
+========================================== */
+
+.video-hero {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 620px;
+
+    overflow: hidden;
+    background: #111;
+    color: #fff;
+}
+
+/* BACKGROUND VIDEO */
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 1;
+}
+
+/* DARK OVERLAY */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 2;
+}
+
+/* CONTENT */
+
+.video-hero-content {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+    padding: 115px 38px 35px;
+}
+
+/* TOP LABELS */
+
+.hero-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    font-size: 10px;
+    letter-spacing: 0.04em;
+}
+
+/* CENTER */
+
+.hero-center {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.hero-center > p {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+}
+
+.hero-center h1 {
+    font-size: clamp(75px, 15vw, 260px);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.09em;
+    white-space: nowrap;
+}
+
+.hero-center h1 span {
+    display: inline-block;
+    font-size: 0.16em;
+    letter-spacing: 0;
+    vertical-align: top;
+    margin-left: 12px;
+}
+
+.hero-subtitle {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-top: 30px;
+
+    font-size: 10px;
+    letter-spacing: 0.04em;
+}
+
+/* BOTTOM */
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    font-size: 10px;
+    letter-spacing: 0.04em;
+}
+
+.hero-bottom a {
+    transition: opacity 0.3s ease;
+}
+
+.hero-bottom a:hover {
+    opacity: 0.6;
+}
+
+.video-toggle {
+    border: none;
+    background: none;
+    color: #fff;
+
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* HEADER OVER VIDEO — HOME ONLY */
+
+body:has(.video-hero) .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    background: transparent;
+    color: #fff;
+}
+
+body:has(.video-hero) .site-nav a::after {
+    background: #fff;
+}
+
+/* MOBILE MENU OVER VIDEO */
+
+@media (max-width: 767px) {
+
+    body:has(.video-hero) .site-nav.is-open {
+        background: #111;
+        color: #fff;
+        border-bottom-color: #444;
+    }
+
+    .video-hero {
+        min-height: 540px;
+    }
+
+    .video-hero-content {
+        padding: 115px 20px 30px;
+    }
+
+    .hero-top span:last-child {
+        display: none;
+    }
+
+    .hero-center h1 {
+        font-size: clamp(48px, 12.5vw, 100px);
+    }
+
+    .hero-center h1 span {
+        margin-left: 5px;
+    }
+
+    .hero-subtitle {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .hero-bottom {
+        flex-wrap: wrap;
+    }
+
+    .hero-bottom > span {
+        display: none;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-video {
+        display: none;
     }
 }

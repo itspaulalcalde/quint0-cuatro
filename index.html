@@ -1,285 +1,360 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="widht=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>bare studio.</title>
+    <meta name="description"
+          content="Paula Alcalde — Graphic and multimedia designer based in Madrid.">
 
-    <meta name="description" content="bare studio. Fine Line Tattoo studio in Copenhage.">
+    <title>Paula Alcalde® — Portfolio</title>
 
     <link rel="stylesheet" href="css/style.css">
-
+    <script src="js/script.js" defer></script>
 </head>
 
-
-
 <body>
-    <!--MENÚ-->
-    <header class="header">
-        <div class="logo">
-            <a href="index.html">quinto cuatro.</a>
-        </div>
 
-        <button type="button"
-                class="menu-btn"
-                aria-label="Menu"
-                aria-controls="main-menu"
-                aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <button class="menu-button"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navigation">
         </button>
 
-        <nav class="navigation menu" id="main-menu">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="rooms.html">ROOMS</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-            </ul>
+        <nav class="site-nav"
+             id="navigation"
+             aria-label="Main navigation">
+
+            <a href="index.html" aria-current="page">HOME</a>
+            <a href="rooms.html">ROOMS</a>
+            <a href="about.html">ABOUT</a>
+            <a href="mailto:hello@example.com">CONTACT ↗</a>
+
         </nav>
+
     </header>
 
+
     <main>
-        <section class="hero" id="home">
-            <div class="hero-title">
-                <h1>quinto cuatro</h1>
+
+
+    <!-- VIDEO HERO -->
+
+    <section class="video-hero">
+
+        <!-- BACKGROUND VIDEO -->
+
+        <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="images/hero-poster.jpg">
+
+            <source src="videos/horse.mov" type="video/mp4">
+
+        </video>
+
+        <!-- DARK OVERLAY -->
+
+        <div class="hero-overlay"></div>
+
+
+        <!-- HERO CONTENT -->
+
+        <div class="video-hero-content">
+
+
+            <div class="hero-center">
+
+                <p>PAULA ALCALDE — SELECTED WORK</p>
+
+                <h1>
+                    PORTFOLIO<span>®</span>
+                </h1>
+
+                <div class="hero-subtitle">
+
+                    <span>
+                        GRAPHIC DESIGN / ART DIRECTION
+                    </span>
+
+                    <span>
+                        MADRID, SPAIN / 2026
+                    </span>
+
+                </div>
+
             </div>
+
 
             <div class="hero-bottom">
 
-                <div class="hero-info">
-                    <p>MULTIMEDIA</p>
-                    <p>& GRAPHIC DESIGN</p>
-                </div>
+                <a href="#selected-work">
+                    SCROLL TO EXPLORE ↓
+                </a>
+
+                <span>2024 — 2026</span>
+
+                <button
+                    class="video-toggle"
+                    type="button"
+                    aria-label="Pause background video"
+                    aria-pressed="false">
+                    PAUSE ◌
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
-                <div class="hero-location">
-                    <p>PAULA ALCALDE</p>
-                    <p>MADRID, SPAIN</p>
+
+        <!-- SELECTED PROJECTS -->
+
+        <section class="gallery-section wrap" id="selected-work">
+
+            <div class="section-meta eyebrow">
+
+                <span>01 / PROJECT INDEX</span>
+                <span>SELECTED WORK / 2024—2026</span>
+
+            </div>
+
+
+            <div class="gallery">
+
+                <!-- PROJECT 01 -->
+
+                <a class="project reveal" href="rooms.html">
+
+                    <div class="project-media">
+
+                        <img src="images/project-01.jpg"
+                             alt="Editorial project cover"
+                             loading="lazy">
+
+                    </div>
+
+                    <div class="project-caption caption">
+
+                        <span>01 / LO QUE PERMANECE</span>
+                        <span>EDITORIAL DESIGN — 2026</span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- PROJECT 02 -->
+
+                <a class="project reveal" href="rooms.html">
+
+                    <div class="project-media">
+
+                        <img src="images/project-02.jpg"
+                             alt="Bare Studio branding"
+                             loading="lazy">
+
+                    </div>
+
+                    <div class="project-caption caption">
+
+                        <span>02 / BARE STUDIO</span>
+                        <span>BRANDING — 2026</span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- PROJECT 03 -->
+
+                <a class="project reveal" href="rooms.html">
+
+                    <div class="project-media">
+
+                        <img src="images/project-03.jpg"
+                             alt="Photography series"
+                             loading="lazy">
+
+                    </div>
+
+                    <div class="project-caption caption">
+
+                        <span>03 / VISUAL DIARY</span>
+                        <span>PHOTOGRAPHY — 2025</span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- PROJECT 04 -->
+
+                <a class="project reveal" href="rooms.html">
+
+                    <div class="project-media">
+
+                        <img src="images/project-04.jpg"
+                             alt="Poster design"
+                             loading="lazy">
+
+                    </div>
+
+                    <div class="project-caption caption">
+
+                        <span>04 / VISUAL STUDIES</span>
+                        <span>POSTER DESIGN — 2026</span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- PROJECT 05 -->
+
+                <a class="project reveal" href="rooms.html">
+
+                    <div class="project-media">
+
+                        <img src="images/project-05.jpg"
+                             alt="Film still"
+                             loading="lazy">
+
+                    </div>
+
+                    <div class="project-caption caption">
+
+                        <span>05 / MOVING IMAGES</span>
+                        <span>SHORT FILM — 2026</span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <!-- ALL PROJECTS LINK -->
+
+            <a class="section-link" href="rooms.html">
+
+                <span>EXPLORE THE COMPLETE ARCHIVE</span>
+                <span>↗</span>
+
+            </a>
+
+        </section>
+
+
+        <!-- ABOUT PREVIEW -->
+
+        <section class="statement wrap">
+
+            <div class="statement-grid">
+
+                <span class="eyebrow">
+                    02 / INTRODUCTION
+                </span>
+
+                <div>
+
+                    <h2 class="reveal">
+                        Design is a way of looking closer,
+                        asking questions and finding meaning
+                        in the details.
+                    </h2>
+
+                    <p class="reveal">
+                        I'm Paula, a graphic and multimedia
+                        designer exploring the space between
+                        art direction, editorial design,
+                        photography and moving images.
+                    </p>
+
+                    <a class="section-link" href="about.html">
+
+                        <span>MORE ABOUT ME</span>
+                        <span>↗</span>
+
+                    </a>
+
                 </div>
 
             </div>
 
         </section>
-    </main>
-
-    <!-- SELECTED WORK -->
-
-    <section class="all-work">
-
-        <a href="rooms.html">
-            ALL ROOMS
-            <span>↗</span>
-        </a>
-
-    </section>
-
-    <section class="home-work">
-
-
-        <div class="work-intro">
-            <p>SELECTED WORK</p>
-
-            <p class="work-intro-text">
-                A selection of projects across graphic design,
-                art direction, photography and audiovisual.
-            </p>
-
-            <p>(2024—2026)</p>
-        </div>
-
-
-        <!-- PROYECTO 01 -->
-
-        <a href="cinema-church.html" class="home-project project-large">
-
-            <img src="gallery/Home 1.jpeg" alt="">
-
-            <div class="home-project-info">
-                <span>01</span>
-                <span>Heat Wave in Paris</span>
-                <span>Photography</span>
-            </div>
-
-        </a>
-
-
-        <!-- PROYECTO 02 -->
-
-        <a href="moco.html" class="home-project project-small-right">
-
-            <img src="gallery/Home 2.jpeg" alt="">
-
-            <div class="home-project-info">
-                <span>02</span>
-                <span>Calvin Klein</span>
-                <span>Branding</span>
-            </div>
-
-        </a>
-
-
-        <!-- PROYECTO 03 -->
-
-        <a href="claudio.html" class="home-project project-medium-left">
-
-            <img src="gallery/Home 3.jpeg" alt="">
-
-            <div class="home-project-info">
-                <span>03</span>
-                <span>What Does Our Brain Believe In?</span>
-                <span>Editorial Design</span>
-            </div>
-
-        </a>
-
-    </section>
-
-
-
-    <!-- LUCIDE ICONS -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- FOOTER -->
-
-    <footer class="portfolio-footer" id="contact">
-
-        <!-- TOP -->
-
-        <div class="footer-top">
-
-            <span>04 / CONTACT</span>
-
-            <div class="footer-status">
-                <span class="status-dot"></span>
-                <span>OPEN TO COLLABORATIONS</span>
-            </div>
-
-        </div>
 
 
         <!-- CONTACT -->
 
-        <div class="footer-contact">
+        <section class="contact-band wrap">
 
-            <h2>Have an idea in mind?</h2>
+            <span class="eyebrow">
+                03 / GET IN TOUCH
+            </span>
 
-            <p>I'd love to hear about it.</p>
+            <h2 class="reveal">
 
-            <a href="mailto:tuemail@ejemplo.com"
-            class="footer-contact-link">
+                <a href="mailto:hello@example.com">
+                    Say hello ↗
+                </a>
 
-                <i data-lucide="mail"></i>
+            </h2>
 
-                <span>LET'S GET IN TOUCH</span>
+            <span class="micro">
+                OPEN TO COLLABORATIONS AND NEW IDEAS
+            </span>
 
-                <i data-lucide="arrow-up-right"></i>
+        </section>
 
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-top">
+
+            <span>PAULA ALCALDE®</span>
+            <span>MADRID, SPAIN</span>
+
+            <a href="about.html">
+                ABOUT ↗
             </a>
 
         </div>
 
-
-        <!-- FOOTER COLUMNS -->
-
-        <div class="footer-columns">
-
-            <!-- NAVIGATION -->
-
-            <div class="footer-column">
-
-                <span class="footer-label">EXPLORE</span>
-
-                <a href="index.html">Home</a>
-
-                <a href="rooms.html">Rooms</a>
-
-                <a href="about.html">About me</a>
-
-            </div>
-
-
-            <!-- SOCIAL MEDIA -->
-
-            <div class="footer-column">
-
-                <span class="footer-label">FIND ME ONLINE</span>
-
-                <a href="#" target="_blank"
-                rel="noopener noreferrer">
-                    <i data-lucide="instagram"></i>
-                    Instagram
-                </a>
-
-                <a href="#" target="_blank"
-                rel="noopener noreferrer">
-                    <i data-lucide="dribbble"></i>
-                    Behance
-                </a>
-
-                <a href="#" target="_blank"
-                rel="noopener noreferrer">
-                    <i data-lucide="linkedin"></i>
-                    LinkedIn
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- IDENTITY -->
-
-        <div class="footer-identity">
-
-            <div class="footer-brand">
-
-                <span class="footer-logo">paula.</span>
-
-                <p>GRAPHIC & MULTIMEDIA DESIGNER</p>
-
-            </div>
-
-            <div class="footer-location">
-
-                <i data-lucide="map-pin"></i>
-
-                <span>MADRID, SPAIN</span>
-
-            </div>
-
-        </div>
-
-
-        <!-- BOTTOM -->
-
         <div class="footer-bottom">
 
-            <span>© 2026 ALL RIGHTS RESERVED</span>
+            <span>
+                © 2026 ALL RIGHTS RESERVED.
+            </span>
 
-            <a href="#top">
-                BACK TO TOP
-                <i data-lucide="arrow-up"></i>
+            <span>
+                DESIGNED WITH INTENTION.
+            </span>
+
+            <a href="#">
+                BACK TO TOP ↑
             </a>
 
         </div>
 
     </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
-
-
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/script.js"></script>
-
-
 </body>
-
 </html>

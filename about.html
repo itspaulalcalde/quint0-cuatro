@@ -1,281 +1,407 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="widht=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>bare studio.</title>
+    <meta name="description"
+          content="About Paula Alcalde, a graphic and multimedia designer based in Madrid.">
 
-    <meta name="description" content="bare studio. Fine Line Tattoo studio in Copenhage.">
+    <title>About — Paula Alcalde®</title>
 
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="js/script.js" defer></script>
+
 </head>
 
-
-
 <body>
-    <!--MENÚ-->
-    <header class="header">
-        <div class="logo">
-            <a href="index.html">quinto cuatro.</a>
-        </div>
 
-        <button type="button"
-                class="menu-btn"
-                aria-label="Menu"
-                aria-controls="main-menu"
-                aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+    <!-- HEADER -->
 
-        <nav class="navigation menu" id="main-menu">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="rooms.html">ROOMS</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header class="site-header">
 
-    <!-- ABOUT ME -->
-
-
-<!-- ABOUT ME -->
-
-<section class="portfolio-about" id="about">
-
-    <!-- INTRODUCCIÓN -->
-
-    <div class="portfolio-about-intro">
-
-        <p class="portfolio-label">01 / ABOUT ME</p>
-
-        <h1 class="portfolio-about-title">
-            A little<br>
-            about me.
-        </h1>
-
-        <p class="portfolio-intro-caption">
-            DESIGN, IDEAS & EVERYTHING IN BETWEEN.
-        </p>
-
-    </div>
-
-
-    <!-- PRESENTACIÓN -->
-
-    <div class="portfolio-about-content">
-
-        <div class="portfolio-about-image">
-            <img src="images/about-me.jpg"
-                 alt="Personal portrait">
-        </div>
-
-        <div class="portfolio-about-info">
-
-            <span class="portfolio-small-label">
-                THE PERSON BEHIND THE WORK
-            </span>
-
-            <h2>Hi, I'm Paula.</h2>
-
-            <p>
-                I'm a graphic and multimedia designer
-                based in Madrid, Spain.
-            </p>
-
-            <p>
-                I'm interested in the intersection
-                of design, art direction, photography
-                and visual storytelling.
-            </p>
-
-            <p>
-                I see design as a way of translating
-                ideas, emotions and stories into
-                meaningful visual experiences.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- DISCIPLINAS -->
-
-    <div class="portfolio-disciplines">
-
-        <div class="portfolio-disciplines-heading">
-            <span class="portfolio-small-label">
-                02 / WHAT I DO
-            </span>
-
-            <h2>Things I love doing.</h2>
-        </div>
-
-        <div class="portfolio-disciplines-list">
-
-            <div class="portfolio-discipline">
-                <span>01</span>
-                <h3>Art Direction</h3>
-                <span>↗</span>
-            </div>
-
-            <div class="portfolio-discipline">
-                <span>02</span>
-                <h3>Visual Identity</h3>
-                <span>↗</span>
-            </div>
-
-            <div class="portfolio-discipline">
-                <span>03</span>
-                <h3>Editorial Design</h3>
-                <span>↗</span>
-            </div>
-
-            <div class="portfolio-discipline">
-                <span>04</span>
-                <h3>Photography</h3>
-                <span>↗</span>
-            </div>
-
-            <div class="portfolio-discipline">
-                <span>05</span>
-                <h3>Digital Experiences</h3>
-                <span>↗</span>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- CONTACTO -->
-
-    <div class="portfolio-about-contact">
-
-        <p class="portfolio-small-label">
-            03 / GET IN TOUCH
-        </p>
-
-        <h2>Let's make<br>something happen.</h2>
-
-        <a href="mailto:hello@example.com">
-            SAY HELLO ↗
+        <a class="wordmark" href="index.html">
+            PAULA ALCALDE<sup>®</sup>
         </a>
 
-    </div>
+        <button class="menu-button"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navigation">
+            MENU
+        </button>
 
-</section>
+        <nav class="site-nav"
+             id="navigation"
+             aria-label="Main navigation">
+
+            <a href="index.html">HOME</a>
+            <a href="rooms.html">ROOMS</a>
+            <a href="about.html" aria-current="page">ABOUT</a>
+            <a href="mailto:hello@example.com">CONTACT ↗</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- ABOUT INTRODUCTION -->
+
+        <section class="about-intro wrap">
+
+            <div class="intro-meta eyebrow">
+
+                <span>02 / ABOUT ME</span>
+                <span>MADRID, SPAIN — 2026</span>
+
+            </div>
+
+            <div class="about-heading">
+
+                <h1 class="reveal">
+                    A little<br>
+                    about me<span class="muted">.</span>
+                </h1>
+
+                <p class="micro">
+                    THE PERSON BEHIND THE WORK
+                </p>
+
+            </div>
+
+
+            <!-- PORTRAIT & INTRODUCTION -->
+
+            <div class="about-layout">
+
+                <div class="about-image reveal">
+
+                    <img src="images/about/portrait.jpg"
+                         alt="Portrait of Paula Alcalde">
+
+                    <div class="image-caption">
+
+                        <span>FIG. 01 — THE DESIGNER</span>
+                        <span>MADRID / 2026</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-text reveal">
+
+                    <span class="eyebrow">
+                        INTRODUCTION / 001
+                    </span>
+
+                    <h2>
+                        Hi, I'm Paula.
+                    </h2>
+
+                    <p class="about-lead">
+                        A graphic and multimedia designer
+                        interested in creating thoughtful
+                        visual experiences.
+                    </p>
+
+                    <p>
+                        I'm based in Madrid, where I explore
+                        different creative disciplines,
+                        from editorial design and branding
+                        to photography and moving images.
+                    </p>
+
+                    <p>
+                        My approach is driven by curiosity,
+                        experimentation and a fascination
+                        with the relationship between
+                        images, ideas and emotions.
+                    </p>
+
+                    <p>
+                        I believe that good design goes
+                        beyond aesthetics. It's about
+                        communicating something meaningful
+                        and finding beauty in the details.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
 
 
 
+        <!-- PERSONAL STATEMENT -->
 
-    <!--SKILLS-->
-    <section class="skills">
+        <section class="about-quote wrap">
 
-        <div class="skills-header">
-            <h2>Skills</h2>
+            <div class="section-meta eyebrow">
 
-            <p>
-                SELECTED DISCIPLINES<br>
-                & CAPABILITIES
-            </p>
+                <span>01 / CREATIVE APPROACH</span>
+                <span>A PERSONAL NOTE</span>
+
+            </div>
+
+            <div class="quote-layout">
+
+                <span class="quote-symbol">✳</span>
+
+                <h2 class="reveal">
+                    Always curious.<br>
+                    Always observing.<br>
+                    <em>Always creating.</em>
+                </h2>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CREATIVE DISCIPLINES -->
+
+        <section class="about-disciplines wrap">
+
+            <div class="section-meta eyebrow">
+
+                <span>02 / WHAT I DO</span>
+                <span>CREATIVE DISCIPLINES</span>
+
+            </div>
+
+            <div class="disciplines-layout">
+
+                <div class="disciplines-heading">
+
+                    <h2 class="reveal">
+                        Areas of<br>
+                        interest.
+                    </h2>
+
+                    <p>
+                        A multidisciplinary approach
+                        to visual communication.
+                    </p>
+
+                </div>
+
+
+                <div class="disciplines-list">
+
+                    <div class="discipline-item">
+                        <span>01</span>
+                        <h3>Editorial Design</h3>
+                        <span>↗</span>
+                    </div>
+
+                    <div class="discipline-item">
+                        <span>02</span>
+                        <h3>Branding & Identity</h3>
+                        <span>↗</span>
+                    </div>
+
+                    <div class="discipline-item">
+                        <span>03</span>
+                        <h3>Art Direction</h3>
+                        <span>↗</span>
+                    </div>
+
+                    <div class="discipline-item">
+                        <span>04</span>
+                        <h3>Photography</h3>
+                        <span>↗</span>
+                    </div>
+
+                    <div class="discipline-item">
+                        <span>05</span>
+                        <h3>Moving Images</h3>
+                        <span>↗</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- BEYOND DESIGN -->
+
+        <section class="about-personal wrap">
+
+            <div class="section-meta eyebrow">
+
+                <span>03 / BEYOND DESIGN</span>
+                <span>PERSONAL ARCHIVE</span>
+
+            </div>
+
+
+            <div class="personal-layout">
+
+                <div class="personal-title">
+
+                    <h2 class="reveal">
+                        Outside<br>
+                        the frame.
+                    </h2>
+
+                </div>
+
+
+                <div class="personal-description reveal">
+
+                    <p>
+                        When I'm not designing, you'll
+                        probably find me watching films,
+                        taking photographs, collecting
+                        visual references or discovering
+                        something new.
+                    </p>
+
+                    <p>
+                        I'm inspired by cinema, books,
+                        old photographs, everyday details
+                        and the little things that often
+                        go unnoticed.
+                    </p>
+
+                    <div class="personal-interests">
+
+                        <span>CINEMA</span>
+                        <span>PHOTOGRAPHY</span>
+                        <span>ART</span>
+                        <span>BOOKS</span>
+                        <span>VISUAL CULTURE</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CONTACT -->
+
+        <section class="about-contact wrap">
+
+            <div class="section-meta eyebrow">
+
+                <span>04 / CONTACT</span>
+                <span>LET'S CONNECT</span>
+
+            </div>
+
+
+            <div class="about-contact-layout">
+
+                <div>
+
+                    <p>
+                        HAVE A PROJECT, AN IDEA
+                        OR JUST WANT TO SAY HELLO?
+                    </p>
+
+                    <h2 class="reveal">
+
+                        <a href="mailto:hello@example.com">
+                            Let's talk ↗
+                        </a>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="about-contact-info">
+
+                    <div>
+                        <span>EMAIL</span>
+
+                        <a href="mailto:hello@example.com">
+                            HELLO@EXAMPLE.COM
+                        </a>
+                    </div>
+
+                    <div>
+                        <span>LOCATION</span>
+                        <p>MADRID, SPAIN</p>
+                    </div>
+
+                    <div>
+                        <span>SOCIALS</span>
+
+                        <a href="https://www.instagram.com/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            INSTAGRAM ↗
+                        </a>
+
+                        <a href="https://www.linkedin.com/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            LINKEDIN ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-top">
+
+            <span>PAULA ALCALDE®</span>
+            <span>MADRID, SPAIN</span>
+
+            <a href="about.html">
+                ABOUT ↗
+            </a>
+
         </div>
 
+        <div class="footer-bottom">
 
-        <div class="skills-list">
+            <span>
+                © 2026 ALL RIGHTS RESERVED.
+            </span>
 
-            <div class="skill-row">
-                <span class="skill-number">01</span>
+            <span>
+                DESIGNED WITH INTENTION.
+            </span>
 
-                <h3>Graphic Design</h3>
-
-                <p>
-                    Visual Identity<br>
-                    Poster Design<br>
-                    Layout & Composition
-                </p>
-            </div>
-
-
-            <div class="skill-row">
-                <span class="skill-number">02</span>
-
-                <h3>Art Direction</h3>
-
-                <p>
-                    Creative Concept<br>
-                    Visual Research<br>
-                    Campaign Direction
-                </p>
-            </div>
-
-
-            <div class="skill-row">
-                <span class="skill-number">03</span>
-
-                <h3>Photography</h3>
-
-                <p>
-                    Art Photography<br>
-                    Editorial Photography<br>
-                    Photo Editing
-                </p>
-            </div>
-
-
-            <div class="skill-row">
-                <span class="skill-number">04</span>
-
-                <h3>Audiovisual</h3>
-
-                <p>
-                    Video Editing<br>
-                    Art Direction<br>
-                    Visual Storytelling
-                </p>
-            </div>
-
-
-            <div class="skill-row">
-                <span class="skill-number">05</span>
-
-                <h3>Editorial</h3>
-
-                <p>
-                    Editorial Design<br>
-                    Typography<br>
-                    Publication Design
-                </p>
-            </div>
-
-             <div class="skill-row">
-                <span class="skill-number">06</span>
-
-                <h3>Languages</h3>
-
-                <p>
-                    Spanish<br>
-                    English C1<br>
-                </p>
-            </div>
+            <a href="#">
+                BACK TO TOP ↑
+            </a>
 
         </div>
 
-    </section>
-
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/script.js"></script>
-
+    </footer>
 
 </body>
-
 </html>
